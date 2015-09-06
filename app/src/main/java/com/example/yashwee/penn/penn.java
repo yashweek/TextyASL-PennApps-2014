@@ -1,21 +1,39 @@
 package com.example.yashwee.penn;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 public class penn extends AppCompatActivity {
+
+    // the input text for getting the input
+    private EditText mEditText;
+    private ImageView mImageView;
+//    private GifGenerator mGifGenrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penn);
+        mEditText = (EditText) findViewById(R.id.editText);
+        mImageView = (ImageView) findViewById(R.id.imageView);
+        Button getGifButton = (Button) findViewById(R.id.getGifButton);
+        getGifButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String inputText = mEditText.getText().toString();
 
-       Button getGifButton = (Button) findViewById(R.id.getGifButton);
+             Drawable drawable = mGifGenrator.getGif(inputText);
 
-
+              mImageView.setImageDrawable(drawable);
+            }
+        });
     }
 
     @Override
@@ -39,4 +57,6 @@ public class penn extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
