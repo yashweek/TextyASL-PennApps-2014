@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class penn extends AppCompatActivity {
 
@@ -11,6 +12,10 @@ public class penn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penn);
+
+       Button getGifButton = (Button) findViewById(R.id.getGifButton);
+
+
     }
 
     @Override
