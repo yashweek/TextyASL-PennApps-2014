@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.content.Intent;
 
 public class penn extends AppCompatActivity {
 
@@ -29,9 +30,10 @@ public class penn extends AppCompatActivity {
             public void onClick(View v) {
                 String inputText = mEditText.getText().toString();
 
-             Drawable drawable = mGifGenrator.getGif(inputText);
+             //Drawable drawable = mGifGenrator.getGif(inputText);
 
-              mImageView.setImageDrawable(drawable);
+              //mImageView.setImageDrawable(drawable);
+                splitSentence(inputText);
             }
         });
     }
@@ -56,6 +58,15 @@ public class penn extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void splitSentence(String inputText) {
+        String[] words = inputText.split(" ");
+        for (String word: words){
+
+
+        }
+
     }
 
 
